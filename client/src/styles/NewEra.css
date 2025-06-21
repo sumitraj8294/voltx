@@ -1,0 +1,72 @@
+.new-era {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+  background-color: var(--background-color, #f5f7fa);
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.new-era-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.new-era-image img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.new-era-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.new-era-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-color, #222);
+}
+
+.new-era-text p {
+  font-size: 16px;
+  color: var(--text-light-color, #555);
+  margin-bottom: 25px;
+}
+
+.signup-btn {
+  padding: 10px 22px;
+  background-color: var(--primary-color, #009fff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #007cd1;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .new-era {
+    flex-direction: column-reverse;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .new-era-text,
+  .new-era-image {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .new-era-image img {
+    max-width: 90%;
+  }
+}

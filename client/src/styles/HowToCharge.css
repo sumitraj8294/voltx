@@ -1,0 +1,131 @@
+.how-to-charge {
+  background-color: var(--background-color, #d9d9d9);
+  padding: 60px 40px;
+  border-radius: 10px;
+}
+
+.charge-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.charge-left {
+  flex: 1;
+  max-width: 400px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.charge-left h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--text-color, #111);
+  font-weight: bold;
+}
+
+.charge-left p {
+  font-size: 16px;
+  color: var(--text-light-color, #444);
+  margin-bottom: 25px;
+}
+
+.join-btn {
+  padding: 10px 25px;
+  background-color: var(--primary-color, #009fff);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.join-btn:hover {
+  background-color: #007cd1;
+}
+
+.charge-right {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.circle {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary-color, #009fff);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--text-color, #111);
+}
+
+.step-text p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  color: var(--text-light-color, #444);
+  line-height: 1.5;
+}
+
+.connector {
+  height: 40px;
+  width: 2px;
+  background-color: #bbb;
+  margin-left: 17px;
+  position: relative;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .charge-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .charge-left,
+  .charge-right {
+    max-width: 100%;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .connector {
+    margin: 10px auto;
+    height: 30px;
+  }
+
+  .circle {
+    margin-bottom: 10px;
+  }
+
+  .step-text h3 {
+    font-size: 17px;
+  }
+
+  .step-text p {
+    font-size: 14px;
+  }
+}
