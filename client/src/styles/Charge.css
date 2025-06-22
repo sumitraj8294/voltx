@@ -61,8 +61,10 @@
   }
 }
 .charge-page {
-  padding: 40px 20px;
-  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-bar {
@@ -136,12 +138,9 @@
 
 .map {
   height: 500px;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 30px;
+  width: 80%;
   border-radius: 10px;
-  overflow: hidden;
-  z-index: -1;
+  margin-top: 20px;
 }
 
 .no-results {
