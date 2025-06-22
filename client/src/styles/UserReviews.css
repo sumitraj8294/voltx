@@ -24,12 +24,12 @@
 }
 
 .review-card {
-  background-color: #f5f5f5;
+  background-color: #f2fefe;
   border-radius: 12px;
   padding: 25px;
   max-width: 280px;
   flex: 1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(181, 202, 201, 0.05);
   transition: transform 0.2s ease;
 }
 

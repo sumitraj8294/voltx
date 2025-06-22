@@ -1,0 +1,169 @@
+.about-page {
+  font-family: sans-serif;
+}
+
+/* Intro */
+.about-intro {
+  background-color: #e6f4f9;
+  padding: 60px 30px;
+  text-align: center;
+}
+.about-intro h1 {
+  font-size: 32px;
+  color: #007acc;
+}
+.about-intro p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Features */
+.about-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 20px;
+  gap: 20px;
+  background-color: #ffffff;
+}
+.feature-card {
+  background-color: #f8f9fb;
+  padding: 25px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.feature-card h3 {
+  color: #009fff;
+  margin-bottom: 10px;
+}
+
+/* Mission & Vision */
+.mission-section {
+  background-color: #f1f9f1;
+  padding: 60px 30px;
+  text-align: center;
+}
+.mission-section h2 {
+  font-size: 28px;
+  color: #00b894;
+}
+.mission-section p {
+  max-width: 650px;
+  margin: 10px auto 30px;
+  color: #444;
+}
+
+/* Team Section */
+.team-section {
+  padding: 60px 30px;
+  text-align: center;
+  background-color: #fff;
+}
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.team-card {
+  background-color: #f2f4f8;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+}
+.team-card img {
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: 10px;
+}
+.team-card h4 {
+  margin: 10px 0 5px;
+}
+.team-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Impact Section */
+.impact-section {
+  background-color: #e9f7ef;
+  padding: 60px 30px;
+  text-align: center;
+}
+.impact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+.impact-card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.impact-card h3 {
+  color: #00b894;
+  font-size: 28px;
+}
+.impact-card p {
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-card,
+  .team-card,
+  .impact-card {
+    width: 90%;
+  }
+  .mission-section p,
+  .about-intro p {
+    font-size: 15px;
+  }
+}
+.about-img,
+.mission-img,
+.feature-card img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Layouts */
+.about-intro-content,
+.mission-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.about-text,
+.mission-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.feature-card img {
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-img,
+  .mission-img {
+    max-width: 90%;
+  }
+}
