@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Charge.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import axios from 'axios';
+import background from '../assets/background.png';
 
 const Charge = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -98,7 +99,25 @@ const Charge = () => {
   };
 
   return (
-    <div className="charge-page">
+    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+    {/* 🔻 Background Image with Low Opacity */}
+    <img
+      src={background}
+      alt="background"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        opacity: 0.3, // 👈 Lower opacity here
+        zIndex: 0,
+      }}
+    />
+
+    {/* 🔺 Foreground Content */}
+    <div className="charge-page" style={{ position: 'relative', zIndex: 1 }}>
       <h1>Find EV Charging Stations</h1>
       <p>Search any city or use your current location</p>
 
@@ -172,6 +191,7 @@ const Charge = () => {
         </div>
       )}
     </div>
+  </div>
   );
 };
 

@@ -1,81 +1,135 @@
+/* Navbar layout */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  justify-content: space-between;
   background-color: var(--card-bg-color, #fff);
+  padding: 20px 40px;
   border-bottom: 1px solid var(--border-color, #eee);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
-.logo {
-  font-weight: 800;
-  font-size: 24px;
-  color: var(--primary-color, #00b894);
+/* Logo */
+.logo-img {
+  height: 50px;
 }
 
+/* Nav links (inline by default) */
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 30px;
-  font-weight: 500;
+  font-size: 15px;
+  gap: 40px;
+  list-style: none;
+  font-weight: 600;
+  font-family: "Orbitron", sans-serif; /* Futuristic font */
+  letter-spacing: 1px;
 }
 
 .nav-links li a {
+  position: relative;
   text-decoration: none;
-  color: var(--text-color, #2d3436);
-  transition: color 0.2s ease;
+  color: #1f2221;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #889392;
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: var(--primary-color, #00b894);
+  color: #2853fd;
 }
 
+/* Buttons */
 .nav-buttons {
   display: flex;
   gap: 15px;
 }
 
 .login {
-  background: none;
+  background-color: #007a5f;
+  color: white;
   border: none;
-  font-weight: 500;
-  cursor: pointer;
-  color: var(--text-color, #2d3436);
+  padding: 6px 12px;
+  font-weight: 600;
+  border-radius: 4px;
   text-decoration: none;
 }
 
 .get-started {
   background-color: var(--secondary-color, #0984e3);
-  color: #fff;
+  color: white;
   border: none;
   padding: 8px 18px;
   border-radius: 6px;
   font-weight: 600;
-  cursor: pointer;
   text-decoration: none;
 }
 
+/* Hamburger hidden on large screens */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color, #2d3436);
+}
+
+/* -------- Responsive -------- */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Stack all items */
+  .nav-links,
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links.open,
+  .nav-buttons.open {
+    display: flex;
+  }
+
+  .nav-links li,
+  .nav-buttons a {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Center logo + hamburger */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding: 15px 30px;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
+  .logo {
     width: 100%;
-  }
-
-  .nav-buttons {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
