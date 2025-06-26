@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Auth.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = () => {
@@ -12,6 +12,8 @@ const Register = () => {
   });
 
   const [error, setError] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,16 +29,24 @@ const Register = () => {
       return;
     }
 
-    const newUser = { name, email, password, confirmPassword };
-
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', newUser);
+      const res = await axios.post('http://localhost:5000/api/auth/register', {
+        name,
+        email,
+        password,
+        confirmPassword
+      });
       console.log('Registration Success:', res.data);
-      alert('Registration successful!');
+      setShowSuccess(true);
     } catch (err) {
       console.error('Registration Error:', err.response?.data?.message || err.message);
       alert(err.response?.data?.message || 'Something went wrong');
     }
+  };
+
+  const handleLoginRedirect = () => {
+    setShowSuccess(false);
+    navigate('/login');
   };
 
   return (
@@ -108,6 +118,19 @@ const Register = () => {
           Already have an account? <Link to="/login">Log in</Link>
         </div>
       </div>
+
+      {/* ✅ Modal Popup */}
+      {showSuccess && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <h2>🎉 Registration Successful!</h2>
+            <p>Your account has been created successfully.</p>
+            <button className="auth-btn" onClick={handleLoginRedirect}>
+              Go to Login
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

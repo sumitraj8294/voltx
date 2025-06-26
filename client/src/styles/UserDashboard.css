@@ -1,46 +1,193 @@
-.dashboard-page {
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--background-color);
+}
+
+.dashboard {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  background: #f5f7fa;
   min-height: 100vh;
+  flex-direction: row;
 }
 
-.dashboard-box {
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 450px;
-  width: 100%;
+.sidebar {
+  width: 220px;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.dashboard-box h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #009fff;
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
-.dashboard-box p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 30px;
-}
-
-.dashboard-actions button {
-  margin: 8px;
-  padding: 12px 20px;
-  background-color: #009fff;
+.sidebar nav button {
+  background: none;
   color: white;
   border: none;
-  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  text-align: left;
+  transition: color 0.3s;
 }
 
-.dashboard-actions button:hover {
-  background-color: #0077cc;
+.sidebar nav button:hover {
+  color: var(--highlight-color);
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: #f8f8f8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  color: var(--text-color);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.value {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.quick-actions .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quick-actions .actions button {
+  background: var(--highlight-color);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.quick-actions .actions button:hover {
+  background: #f1d37f;
+}
+
+/* --------------------- Responsive Design --------------------- */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .sidebar nav button {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+  }
+
+  .value {
+    font-size: 24px;
+  }
+
+  .quick-actions .actions button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .sidebar .logo {
+    font-size: 20px;
+  }
+}
+.sidebar {
+  width: 220px;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-nav button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.sidebar-nav button:hover {
+  color: var(--highlight-color);
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar-nav {
+    width: 90%;
+  }
+
+  .sidebar-nav button {
+    width: 100%;
+    font-size: 14px;
+  }
 }
